@@ -1,0 +1,47 @@
+<html>
+    <head>
+       <title>REGISTRO CLIENTES</title>
+       <link rel="stylesheet" href="../CSS/REGISTRO.css"> 
+    </head>
+    <body>
+        <div class="Contorno">
+            <header class="Encabezado">
+                <h1>REGISTRO DE CLIENTES</h1>
+            </header>
+
+            <div class="Espaciado-Formulario">
+                <form id="formRegistro" onsubmit="return validarFormulario()">
+                    <div class="Texto-formulario">
+                        <label for="cedula">Cédula</label>
+                        <input id="cedula" type="number">
+                    </div>
+
+                    <div class="Texto-formulario">
+                        <label for="apellidos">Apellidos</label>
+                        <input id="apellidos" type="text">
+                    </div>
+
+                    <div class="Texto-formulario">
+                        <label for="nombres">Nombres</label>
+                        <input id="nombres" type="text">
+                    </div>
+
+                    <div class="Texto-formulario">
+                        <label for="telefono">Teléfono</label>
+                        <input id="telefono" type="number">
+                    </div>
+
+                    <div class="Texto-formulario">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email">
+                    </div>
+
+                    <div class="Texto-formulario">
+                        <button class="Boton" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="../JAVASCRIPT/REGISTRO.js"></script>
+    </body>
+</html>
