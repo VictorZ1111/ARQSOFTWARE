@@ -13,6 +13,7 @@ function validarFormulario() {
         email === ""
     ){
         alert("POR FAVOR, COMPLETE TODOS LOS CAMPOS");
+        return false;
     }
 
     // Crea objeto cliente
