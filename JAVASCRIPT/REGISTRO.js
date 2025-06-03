@@ -13,7 +13,6 @@ function validarFormulario() {
         email === ""
     ){
         alert("POR FAVOR, COMPLETE TODOS LOS CAMPOS");
-        return false;
     }
 
     // Crea objeto cliente
@@ -39,5 +38,4 @@ function validarFormulario() {
     // Limpia formulario
     document.getElementById("formRegistro").reset();
 
-    return false;
 }
