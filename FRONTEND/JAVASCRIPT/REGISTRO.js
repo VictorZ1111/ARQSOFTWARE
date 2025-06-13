@@ -25,17 +25,26 @@ function validarFormulario() {
         email: email
     };
 
-    // Obtener clientes existentes 
-    var clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+    // Envía los datos al backend
+    fetch('http://localhost:3000/clientes', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cliente)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Error al registrar cliente: ' + data.error);
+        } else {
+            alert('CLIENTE REGISTRADO CORRECTAMENTE');
+            document.getElementById("formRegistro").reset();
+        }
+    })
+    .catch(error => {
+        alert('Error de conexión con el backend');
+    });
 
-    // Agrega nuevo cliente
-    clientes.push(cliente);
-
-    // Guarda en localStorage
-    localStorage.setItem("clientes", JSON.stringify(clientes));
-
-    alert("CLIENTE REGISTRADO CORRECTAMENTE");
-
-    // Limpia formulario
-    document.getElementById("formRegistro").reset();
+    return false; // Evita el envío tradicional del formulario
 }
